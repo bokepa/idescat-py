@@ -10,4 +10,4 @@ Per a més informació podeu també visitar el següent/s enllaç:
 		 http://www.idescat.cat/noms/?id=31282
 		 http://www.idescat.cat/noms/?id=31283 
 
-De moment en construcció, s'accepten contribuidors!!
+De moment en construcció, s'accepten contribuïdors!!
