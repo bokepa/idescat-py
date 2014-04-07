@@ -76,9 +76,7 @@ class Base():
 
         self.url.append(self.getLang())
         self.url.append(self.getCodificacio())
-        self.resultat = ''
 
-        # dóna error a l'hora de ajuntar-ho perquè s'han de sobreeescriure
         # les funcions getOperacio() i getServei() en una classe filla
-        return self.resultat.join(self.url)
-
+        # s'han de sobreesciure en una classe filla
+        return self.url
