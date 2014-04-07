@@ -1,4 +1,4 @@
-# Idesc.py
+# onomastica.py
 # A little program that helps with searching statistics throw the web
 # http://api.idescat.cat
 
