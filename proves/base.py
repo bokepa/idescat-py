@@ -61,7 +61,7 @@ class Base():
         return self.PARAM_CODIFICACIO + self.codificacio
             
     def getUrlBase(self):
-        "Retorna un string amb tot l'url de la petició"
+        "Retorna una llista amb tot l'url de la petició"
         self.url = []
         self.url.append(self.REQ)
         self.url.append(self.getServei())
@@ -79,4 +79,5 @@ class Base():
 
         # les funcions getOperacio() i getServei() en una classe filla
         # s'han de sobreesciure en una classe filla
+        # Rretorna una llista perquè és més fàcil treballar-hi en les classes filles
         return self.url
