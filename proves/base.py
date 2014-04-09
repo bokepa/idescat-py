@@ -59,6 +59,13 @@ class Base():
     def getCodificacio(self):
         "Retorna la codificacio especificada"
         return self.PARAM_CODIFICACIO + self.codificacio
+
+    def connecta(self, s, p=False):
+        if p:
+            s.append('?')
+        else:
+            s.append('&')
+        
             
     def getUrlBase(self):
         "Retorna una llista amb tot l'url de la petició"
