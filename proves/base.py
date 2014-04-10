@@ -8,6 +8,8 @@ ATENCIÓ: Necessita ser implementat en una classe filla per funcionar (vegeu
 comentaris)
 """
 
+import excepcions
+
 class Base():
     "Inicialitza les constants del programa. Pensada només per ser implementada"
     REQ = "http://api.idescat.cat/"
@@ -28,7 +30,7 @@ class Base():
         if f in ['xml', 'json', 'php']:
             self.format = f
         else:
-            print('Format no permès. Triï entre: "xml", "json" o "php"')
+            raise excepcions.FormatNoPermes('Format no permès. Triï entre: "xml", "json" o "php"')
 
     def setLang(self, l):
         "Configura l'idioma de la llengua de la petició"
