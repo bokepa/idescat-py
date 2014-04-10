@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from base import Base
+import excepcions
 
 class Onomastica(Base):
     "Prepara la petició a l'API"
@@ -10,14 +11,14 @@ class Onomastica(Base):
         if op in ['dades', 'cerca', 'sug']:
             self.op = op
         else:
-            print('Operació no permesa. Triï entre "dades", "cerca" o "sug"')
+            raise excepcions.OperacioNoPermesa('Operació no permesa. Triï entre "dades", "cerca" o "sug"')
 
     def setSub(self, sub):
         "Configura el subservei"
         if sub in ['noms', 'cognoms', 'nadons']:
             self.subservei = sub
         else:
-            print('Subservei no permès. Triï entre "noms", "cognoms" o "nadons"')
+            raise excepcions.SubserveiNoPermes('Subservei no permès. Triï entre "noms", "cognoms" o "nadons"')
 
     def addId(self, i):
         try:
