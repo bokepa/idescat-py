@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+    # -*- coding: UTF-8 -*-
 
 """
 Módul que serveix de base per a fer les peticions a l'API d'idescat incialitzant
@@ -8,7 +8,7 @@ ATENCIÓ: Necessita ser implementat en una classe filla per funcionar (vegeu
 comentaris)
 """
 
-import excepcions
+from excepcions import *
 
 class Base():
     "Inicialitza les constants del programa. Pensada només per ser implementada"
@@ -30,21 +30,21 @@ class Base():
         if f in ['xml', 'json', 'php']:
             self.format = f
         else:
-            raise excepcions.FormatNoPermes('Format no permès. Triï entre: "xml", "json" o "php"')
+            raise FormatNoPermes('Format no permès. Triï entre: "xml", "json" o "php"')
 
     def setLang(self, l):
         "Configura l'idioma de la llengua de la petició"
         if l in ['ca', 'es', 'en']:
             self.lang = l
         else:
-            print('Format no permès. Triï entre: "ca", "es" o "en"')
+            raise IdiomaNoPermes('Idioma no permès. Triï entre: "ca", "es" o "en"')
     
     def setCodificacio(self, c):
         "Configura la codificació de la resposta de la petició"
         if c in ['utf-8', 'iso-8859-1']:
             self.codificacio = c
         else:
-            print('Format no permès. Triï entre: "utf-8" o "iso-8859-1"')
+            raise CodificacioNoPermesa('Codificació no permesa. Triï entre: "utf-8" o "iso-8859-1"')
             
     def getServei(self):
         # aquesta funció necessita ser sobreescrita per funcionar
@@ -68,7 +68,6 @@ class Base():
         else:
             s.append('&')
         
-            
     def getUrlBase(self):
         "Retorna una llista amb tot l'url de la petició"
         self.url = []

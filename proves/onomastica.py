@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from base import Base
-import excepcions
+from excepcions import *
 
 class Onomastica(Base):
     "Prepara la petició a l'API"
@@ -11,16 +11,17 @@ class Onomastica(Base):
         if op in ['dades', 'cerca', 'sug']:
             self.op = op
         else:
-            raise excepcions.OperacioNoPermesa('Operació no permesa. Triï entre "dades", "cerca" o "sug"')
+            raise OperacioNoPermesa('Operació no permesa. Triï entre "dades", "cerca" o "sug"')
 
     def setSub(self, sub):
         "Configura el subservei"
         if sub in ['noms', 'cognoms', 'nadons']:
             self.subservei = sub
         else:
-            raise excepcions.SubserveiNoPermes('Subservei no permès. Triï entre "noms", "cognoms" o "nadons"')
+            raise SubserveiNoPermes('Subservei no permès. Triï entre "noms", "cognoms" o "nadons"')
 
     def addId(self, i):
+        "Afegeix un paràmetre 'id' a l'URL"
         try:
             if self.op == 'dades':
                 if type(i) is str:
@@ -30,11 +31,12 @@ class Onomastica(Base):
                 elif type(i) is int:
                     self.id = i
                 else:
-                    print('Error: el paràmetre "id" només pot ser un string o un enter')
+                    raise FiltreNoPermes('El paràmetre "id" només pot ser un string o un enter')
             else:
-                print("Error en especificar el filtre: el filtre 'id' només és permès per a l'operació 'dades' (actualment teniu configurada l'operació %s)" % self.op)
+                raise FiltreNoPermes("Error en especificar el filtre: el filtre 'id' només és permès per a l'operació 'dades'" \
+                "(actualment teniu configurada l'operació %s)" % self.op)
         except AttributeError:
-            print('Error: Trieu abans una operació!')
+            raise OperacioNoEspecificada('Trieu abans una operació!')
 
     def getOperacio(self):
         "Retorna l'operació especificada a setOperacio()"
@@ -56,7 +58,7 @@ class Onomastica(Base):
             # cridem a la funció superior per obtenir l'url + bàsic
             self.url = super(Onomastica, self).getUrlBase()  
         except AttributeError:
-            print("Error en especificar l'operació: és un paràmetre obligatori!")
+            raise OperacioNoEspecificada("Error en especificar l'operació: és un paràmetre obligatori!")
         try:
             self.url.insert(5, self.subservei)
             self.url.insert(6, '/')
@@ -64,7 +66,7 @@ class Onomastica(Base):
                 self.__urlDades(self.url)
             return self.url
         except AttributeError:
-            print("Error en especificar el subservei: és un paràmetre obligatori!")
+            raise SubserveiNoEspecificat("Error en especificar el subservei: és un paràmetre obligatori!")
 
 def debug():
     "Per facilitar la feina de depuració"
