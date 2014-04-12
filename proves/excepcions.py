@@ -25,4 +25,10 @@ class IdiomaNoPermes(Exception):
 class CodificacioNoPermesa(Exception):
     pass
     
+class FiltreObligatori(Exception):
+    pass
+    
+class IdError(Exception):
+    pass
+    
     

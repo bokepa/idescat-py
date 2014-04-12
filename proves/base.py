@@ -1,4 +1,4 @@
-    # -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 """
 Módul que serveix de base per a fer les peticions a l'API d'idescat incialitzant
@@ -22,6 +22,8 @@ class Base():
         self.codificacio = 'utf-8'
         self.format = 'json'
         self.lang = 'ca'
+        self.op = None
+        self.subservei = None
     
     def setFormat(self, f):
         "Configura el format de la resposta de la petició"
@@ -61,29 +63,19 @@ class Base():
     def getCodificacio(self):
         "Retorna la codificacio especificada"
         return self.PARAM_CODIFICACIO + self.codificacio
-
-    def connecta(self, s, p=False):
-        if p:
-            s.append('?')
-        else:
-            s.append('&')
-        
+    
+    def afegeixUrl(self, *args):
+        for i in args:
+            self.url.append(i)
+    
     def getUrlBase(self):
         "Retorna una llista amb tot l'url de la petició"
         self.url = []
-        self.url.append(self.REQ)
-        self.url.append(self.getServei())
-        self.url.append('/')
-        self.url.append(self.versio)
-        self.url.append('/')
-        self.url.append(self.getOperacio())
-        self.url.append('.')
-        self.url.append(self.format)
+        self.afegeixUrl(self.REQ, self.getServei(), '/', self.versio, '/', self.getOperacio(), '.', self.format)
 
         # paràmetres generals
 
-        self.url.append(self.getLang())
-        self.url.append(self.getCodificacio())
+        self.afegeixUrl(self.getLang(), self.getCodificacio())
 
         # les funcions getOperacio() i getServei() en una classe filla
         # s'han de sobreesciure en una classe filla
