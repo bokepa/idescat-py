@@ -65,7 +65,7 @@ def fes(cog=None, nom=False, nadons=False, geo=False):
         sol = re(nadons, 'nadons', geo=geo)
 
     #IMPORTANT: change the byte type to str type
-    data = sol.read().decode('utf-8')
+    data = sol.read().decode('utf-8')   
 
     # make an object with a read() method, load and get the data
 

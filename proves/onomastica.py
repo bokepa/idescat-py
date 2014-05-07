@@ -4,7 +4,7 @@ from base import Base
 from excepcions import *
 import re
 
-class Onomastica(Base):
+class OnomasticaBase(Base):
     "Prepara la petició a l'API"
     
     def setOperacio(self, op):
@@ -35,21 +35,24 @@ class Onomastica(Base):
             elif type(i) is int:
                 self.id = i
             else:
-                raise FiltreNoPermes('El paràmetre "id" només pot ser un string o un enter')
+                raise IdNoPermes('El paràmetre "id" només pot ser un string o un enter')
         elif self.op == None:
             raise OperacioNoEspecificada('Trieu abans una operació!')
         else:
-            raise FiltreNoPermes("Error en especificar el filtre: el filtre 'id' només és permès per a l'operació 'dades'" \
+            raise IdNoPermes("Error en especificar el filtre: el filtre 'id' només és permès per a l'operació 'dades'" \
             "(actualment teniu configurada l'operació %s)" % self.op)
 
     def addGeo(self, prefix, geo):
-        g = prefix + ':' + geo
-        print(g)
-        if re.match('^%s:\d\d$' % prefix, g):
-            if self.id_str:
-                raise IdError("No es pot combinat el paràmtre 'id' en forma de string amb cap altre filtre")
-            self.geo = g
+        if prefix in ['prov', 'at', 'com']:
+            g = prefix + ':' + geo
+            if re.match('^%s:\d\d$' % prefix, g):
+                if self.id_str:
+                    raise IdError("No es pot combinar el paràmtre 'id' en forma de string amb cap altre filtre")
+                self.geo = g
+        else: raise
         
+    def addT(self, t):
+        pass
             
     def getOperacio(self):
         "Retorna l'operació especificada a setOperacio()"
@@ -65,14 +68,17 @@ class Onomastica(Base):
         "Construcció específica de l'URL per l'operació dades"
         if not self.id:
             raise FiltreObligatori("Dins l'operació 'dades' és obligatori especificat el paràmetre 'id'")
-        self.afegeixUrl('&id=', str(self.id), '&geo=', self.geo)
-
+        try:
+            self.afegeixUrl('&id=', str(self.id), '&geo=', self.geo)
+        except Exception: # si algun paràmetre no és especificat ens ho saltem silencionsament
+            pass # amb l''id' n'hi ha prou
+            
     def getUrlBase(self):
         "Retorna l'url de la petició"
         if self.op == None:
             raise OperacioNoEspecificada("Error en especificar l'operació: és un paràmetre obligatori!")
         # cridem a la funció superior per obtenir l'url + bàsic
-        self.url = super(Onomastica, self).getUrlBase()  
+        self.url = super(OnomasticaBase, self).getUrlBase()  
         if self.subservei == None:
             raise SubserveiNoEspecificat("Error en especificar el subservei: és un paràmetre obligatori!")    
         self.url.insert(5, self.subservei)
@@ -84,7 +90,7 @@ class Onomastica(Base):
 def debug():
     "Per facilitar la feina de depuració"
     global c
-    c = Onomastica()
+    c = OnomasticaBase()
     c.setOperacio('dades')
     c.setSub('noms')
     c.addId(2500)

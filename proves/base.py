@@ -65,7 +65,7 @@ class Base():
         return self.PARAM_CODIFICACIO + self.codificacio
     
     def afegeixUrl(self, *args):
-        for i in args:
+        for i in args:  
             self.url.append(i)
     
     def getUrlBase(self):

@@ -13,7 +13,7 @@ class OperacioNoEspecificada(Exception):
 class SubserveiNoEspecificat(Exception):
     pass
 
-class FiltreNoPermes(Exception):
+class IdNoPermes(Exception):
     pass
 
 class FormatNoPermes(Exception):
@@ -30,5 +30,10 @@ class FiltreObligatori(Exception):
     
 class IdError(Exception):
     pass
+
+class INoPermes(Exception):
+    pass
+
+
     
-    
+
