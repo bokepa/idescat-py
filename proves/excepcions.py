@@ -34,6 +34,9 @@ class IdError(Exception):
 class INoPermes(Exception):
     pass
 
+class TipusNoPermes(Exception):
+    pass
+
 
     
 

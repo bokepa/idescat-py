@@ -13,15 +13,18 @@ class MunicipiBase(Base):
             self.op = op
             if self.op == 'dades':
                 self.id = None
+                self.i = None
+                self.tipus = None
         else:
             raise OperacioNoPermesa('Operació no permesa. Triï entre "dades" o "nodes"')
 
     def addId(self, id):
         "Afegeix un paràmetre 'id' a l'URL"
+        id = str(id)
         if self.op == 'dades' and re.match(r'\d{5}$', id):
             self.id = id
         else:
-            raise IdNoPermes('El filtre "id" només pot ser un string de 5 xifres')
+            raise IdNoPermes('El filtre "id" només pot ser un enter de 5 xifres')
         if self.op == None:
             raise OperacioNoEspecificada('Trieu abans una operació!')
         elif self.op != 'dades':
@@ -31,11 +34,17 @@ class MunicipiBase(Base):
     def addI(self, i):
         if type(i) is not str:
             raise INoPermes('El filtre "i" ha de ser un string')     
-        if re.match(r'f\d\d\d?', i):
+        if re.match(r'(f\d\d\d?,?){1,5}$', i):
             self.i = i
         else:
             raise INoPermes('El filtre "i" ha de ser de la forma "f\d\d\d?"')
-            
+
+    def addTipus(self, tipus):
+        if re.match('(com,?|cat,?|mun,?){1,3}', tipus):
+            self.tipus = tipus
+        else:
+            raise TipusNoPermes("El filtre 'tipus' només admet 'com', 'cat', o 'mun'")
+    
     def getOperacio(self):
         "Retorna l'operació especificada a setOperacio()"
         # sobreescrivint Base.getOperacio()
@@ -48,13 +57,15 @@ class MunicipiBase(Base):
 
     def __getUrlDades(self):
         "Construcció específica de l'URL per l'operació dades"
-        if not self.id:
-            raise FiltreObligatori("Dins l'operació 'dades' és obligatori especificat el paràmetre 'id'")
-        try:
+        if not (self.id or self.i):
+            raise FiltreObligatori("Dins l'operació 'dades' és obligatori especificar el paràmetre 'id' o el 'i'")
+        if self.id:
             self.afegeixUrl('&id=', self.id)
-        except Exception: # si algun paràmetre no és especificat ens ho saltem silencionsament
-            pass # amb l''id' n'hi ha prou
-            
+        if self.i:
+            self.afegeixUrl('&i=', self.i)
+        if self.tipus:
+            self.afegeixUrl('&tipus=', self.tipus)
+        
     def getUrlBase(self):
         "Retorna l'url de la petició"
         if self.op == None:
@@ -70,4 +81,4 @@ def debug():
     global c
     c = MunicipiBase()
     c.setOperacio('dades')
-    c.addId('44444')
+    c.addId(44444)
