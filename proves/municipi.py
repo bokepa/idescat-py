@@ -95,12 +95,12 @@ def buscaId(s):
         return __parse(s, data)
 
 def __parse(value, obj):
-    obj = obj.split(',')
+    obj = obj.split(',"')
     result = None
     for i in range(len(obj)):
         if value in obj[i]:
             result = obj[i+1]  # traiem la resta que no
-            result = result[6:-1]  # ens interessa
+            result = result[5:-1]  # ens interessa
             return result
         
 def debug():
