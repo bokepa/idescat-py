@@ -21,10 +21,10 @@ class MunicipiBase(Base):
     def addId(self, id):
         "Afegeix un paràmetre 'id' a l'URL"
         id = str(id)
-        if self.op == 'dades' and re.match(r'\d{5}$', id):
+        if re.match(r'\d{6}$', id):
             self.id = id
         else:
-            raise IdNoPermes('El filtre "id" només pot ser un enter de 5 xifres')
+            raise IdNoPermes('El filtre "id" només pot ser un enter/string de 5 xifres')
         if self.op == None:
             raise OperacioNoEspecificada('Trieu abans una operació!')
         elif self.op != 'dades':
@@ -33,7 +33,10 @@ class MunicipiBase(Base):
 
     def addI(self, i):
         if type(i) is not str:
-            raise INoPermes('El filtre "i" ha de ser un string')     
+            raise INoPermes('El filtre "i" ha de ser un string')
+        if self.op != 'dades':
+            raise IdNoPermes("Error en especificar el filtre: el filtre 'i' només és permès per a l'operació 'dades'" \
+            "(actualment teniu configurada l'operació %s)" % self.op)
         if re.match(r'(f\d\d\d?,?){1,5}$', i):
             self.i = i
         else:
@@ -74,11 +77,37 @@ class MunicipiBase(Base):
         self.url = super(MunicipiBase, self).getUrlBase()
         if self.op == 'dades':
             self.__getUrlDades()
+        if self.op == 'nodes' and self.tipus:
+            self.afegeixUrl('&tipus=', self.tipus)
         return self.url
 
+data = None
+
+def buscaId(s):
+    if globals()['data']:
+        return __parse(s, data)  # evitem tornar a fer la petició!
+    else:
+        import urllib.request as req # ho importem dins la funció
+        from io import StringIO # i només per primera vegada
+        url = 'http://api.idescat.cat/emex/v1/nodes.json'
+        sol = req.urlopen(url)
+        globals()['data'] = sol.read().decode('utf-8')
+        return __parse(s, data)
+
+def __parse(value, obj):
+    obj = obj.split(',')
+    result = None
+    for i in range(len(obj)):
+        if value in obj[i]:
+            result = obj[i+1]  # traiem la resta que no
+            result = result[6:-1]  # ens interessa
+            return result
+        
 def debug():
     "Per facilitar la feina de depuració"
     global c
     c = MunicipiBase()
     c.setOperacio('dades')
-    c.addId(44444)
+    c.addId(buscaId('Collbató'))
+    c.addTipus('com,cat')
+    
