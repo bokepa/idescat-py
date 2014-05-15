@@ -84,7 +84,7 @@ class MunicipiBase(Base):
 data = None
 
 def buscaId(s):
-    s = s.capitalize
+    s = s.capitalize()
     if globals()['data']:
         return __parse(s, data)  # evitem tornar a fer la petició!
     else:
@@ -103,6 +103,8 @@ def __parse(value, obj):
             result = obj[i+1]  # traiem la resta que no
             result = result[5:-1]  # ens interessa
             return result
+    if result == None:
+        print("No s'ha trobat l'id")
         
 def debug():
     "Per facilitar la feina de depuració"

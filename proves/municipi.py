@@ -7,7 +7,14 @@ class Municipi(MunicipiBase):
         self.setOperacio(op)
 
     def get(self):
-        url = self.getUrlBase()
-        sol = req.urlopen(self.url)
+        url = ''.join(self.getUrlBase())
+        sol = req.urlopen(url)
         self.data = sol.read().decode('utf-8')
+        return self.data
+
+def debug():
+    c = Municipi('dades')
+    c.addId(buscaId('Collbató'))
+    c.addI('f271')
+    c.get()
         
