@@ -1,0 +1,12 @@
+Municipi.__init__([op])
+
+Inicialitza les bases del projecte cridant a Base.__init__(). Es pot especificar una operació que cridaràa la funció municipi.setOperacio(op). 
+
+Municipi.get()
+
+Funció utilitzada per obtenir les dades de l'API d'IDESCAT. Retorna un string.
+
+== Funcions base ==
+
+Municipi.setFormat(format)
+
