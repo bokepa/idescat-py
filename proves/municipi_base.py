@@ -21,7 +21,7 @@ class MunicipiBase(Base):
     def addId(self, id):
         "Afegeix un paràmetre 'id' a l'URL"
         id = str(id)
-        if re.match(r'\d{6}$', id):
+        if re.match(r'\d{2,6}$', id):
             self.id = id
         else:
             raise IdNoPermes('El filtre "id" només pot ser un enter/string de 5 xifres')
@@ -37,10 +37,10 @@ class MunicipiBase(Base):
         if self.op != 'dades':
             raise IdNoPermes("Error en especificar el filtre: el filtre 'i' només és permès per a l'operació 'dades'" \
             "(actualment teniu configurada l'operació %s)" % self.op)
-        if re.match(r'(f\d\d\d?,?){1,5}$', i):
+        if re.match(r'(f\d\d?\d?,?){1,5}$', i):
             self.i = i
         else:
-            raise INoPermes('El filtre "i" ha de ser de la forma "f\d\d\d?"')
+            raise INoPermes('El filtre "i" ha de ser de la forma "f\d\d?\d?"')
 
     def addTipus(self, tipus):
         if re.match('(com,?|cat,?|mun,?){1,3}', tipus):
@@ -84,7 +84,6 @@ class MunicipiBase(Base):
 data = None
 
 def buscaId(s):
-    s = s.capitalize()
     if globals()['data']:
         return __parse(s, data)  # evitem tornar a fer la petició!
     else:
