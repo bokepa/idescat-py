@@ -37,6 +37,8 @@ class INoPermes(Exception):
 class TipusNoPermes(Exception):
     pass
 
+class DataError(Exception):
+    pass
 
     
 

@@ -37,7 +37,9 @@ class MunicipiBase(Base):
         if self.op != 'dades':
             raise IdNoPermes("Error en especificar el filtre: el filtre 'i' només és permès per a l'operació 'dades'" \
             "(actualment teniu configurada l'operació %s)" % self.op)
-        if re.match(r'(f\d\d?\d?,?){1,5}$', i):
+        if 'f271' in i:
+            i = i.replace('f271', 'f261')  # problema amb la superfície
+        if re.match(r'(f\d\d?\d?,? ?){1,5}$', i):
             self.i = i
         else:
             raise INoPermes('El filtre "i" ha de ser de la forma "f\d\d?\d?"')
