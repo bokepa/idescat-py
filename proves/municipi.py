@@ -22,7 +22,6 @@ class Municipi(MunicipiBase):
         url = ''.join(self.getUrlBase())
         sol = req.urlopen(url)
         self.data = sol.read().decode('utf-8')
-        return self.data
 
     def __busca(self, clau):
         r = StringIO(self.data)
@@ -37,6 +36,9 @@ class Municipi(MunicipiBase):
         for e in root.iter(element or 'f'): 
             if e.attrib['id'] == clau:
                 for i in e.getchildren():
+                    # if i.tag == 'calt' or i.tag == 'c' and i.text in self.raw:
+                        # continue
+                    # else:
                     self.raw.append(i.tag) # per self.get_raw()
                     self.raw.append(i.text) # ídem
                     try:
@@ -67,24 +69,29 @@ class Municipi(MunicipiBase):
         else:   
             print('Aquesta funció només funciona si s\'ha sepecificat el filtre "i"')
         
-    def getIndicadors(self, printable=True):
+    def getIndicadors(self, mostra=True):
         '''Mostra els valors dels indicadors'''
         for i in self.__get():
-            if printable: 
+            if mostra: 
                 print(i)
             
-    def get_raw(self):  # ES POT FER AMB JSON??
+    def get_raw(self, mostra=False):  # ES POT FER AMB JSON??
         '''Retorna les dades crues -> tuples list'''
+        import pprint
         def dic():
             raw_tags = [self.raw[i] for i in range(0, len(self.raw), 2)] # obtenim una llista amb els tags
             raw_texts = [self.raw[i] for i in range(1, len(self.raw), 2)] # i una amb els valors
             return list(zip(raw_tags, raw_texts))
         if self.apunt:
+            if mostra:
+                pprint.pprint(dic())
             return dic()
         else:
-            self.getIndicadors(printable=False)  # la cirdem per obtenir self.raw, res més
+            self.getIndicadors(mostra=False)  # la cirdem per obtenir self.raw, res més
+            if mostra:
+                pprint.pprint(dic())
             return dic()
-
+        # s'ha de mirar que tot no es vagi afegint o sí...
 
 def debug():
     global c
