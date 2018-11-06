@@ -1,4 +1,17 @@
-﻿Implementació de l'API d'Idescat.cat (www.idescat.cat/api) escrita en Python. Suporta l'onomàstica és a dir al donar-li un nom o cognom et retorna el nombre de persones que es diuen així i a més es pot especificar la comarca. 
+﻿# IDESCAT-PY
+
+Implementació de l'API d'Idescat.cat (www.idescat.cat/api) escrita en Python. 
+Parteix d'alguns desenvolupaments fets a la branca original per nkesquerda ( https://github.com/nkesquerda/idescat-py)
+
+En principi s'implementaran els serveis pob, emex i onomastica d'Idescat, en aquest ordre.
+
+## POB
+
+## EMEX
+
+## ONOMASTICA
+
+Suporta l'onomàstica és a dir al donar-li un nom o cognom et retorna el nombre de persones que es diuen així i a més es pot especificar la comarca. 
 
 De moment en construcció
 Exemple:
