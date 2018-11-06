@@ -3,9 +3,13 @@
 from base import Base
 from excepcions import *
 import re
+import urllib.request as req
+from urllib.request import Request, urlopen
+
 
 class PobBase(Base):
     "Prepara la petició a l'API"
+    servei = 'pob'
     
     def setOperacio(self, op):
         "Configura l'operació del servei"
@@ -35,18 +39,21 @@ class PobBase(Base):
             raise PobBaseParamTipusNoPermes('El filtre "tipus" només pot ser un string')
      #dhj 
     
-	def addCercaParamSim(self, sim):
-		sim = str(sim)
+    def addCercaParamSim(self, sim):
+	    sim = str(sim)
+	    if sim in ['0','1','2']:
+	        self.sim = sim
+	    else:
+		    raise PobBaseParamSimNoPermeses('Parametres no permesos')
 		
-	def addCercaParamSelect(self, selec):
-		selec = str(selec)
-		
+	# def addCercaParamSelect(self, selec):
+	# 	selec = str(selec)
 	
-	def addCercaParamOrderby(self, order):
-		order = str(order)
+	# def addCercaParamOrderby(self, order):
+	# 	order = str(order)
 		
-	def addCercaParamPosicio(self, posicio):
-		posicio = str(posicio)
+	# def addCercaParamPosicio(self, posicio):
+	# 	posicio = str(posicio)
 		
 	# Common getters
 	
@@ -58,30 +65,49 @@ class PobBase(Base):
     def getServei(self):
         "Retorna el servei que és sempre 'pob'"
         # sobreescrivint Base.getServei()
-        return 'pob'
+        return self.servei
 
     def __getUrlCerca(self):
         "Construcció específica de l'URL per l'operació dades"
+        if self.q or self.tipus:
+        	self.afegeixUrl('&p=')
+
+        if self.q:
+            self.afegeixUrl('q/', self.q)
+        if self.tipus:
+            self.afegeixUrl('tipus/', self.tipus)
+
+    def __getUrlSug(self):
+        "Construcció específica de l'URL per l'operació dades"
         if not (self.q or self.tipus):
             raise FiltreObligatori("Dins l'operació 'dades' és obligatori especificar el paràmetre 'id' o el 'i'")
-        if self.id:
-            self.afegeixUrl('&p=', self.id)
+        
         if self.i:
             self.afegeixUrl('&i=', self.i)
         if self.tipus:
             self.afegeixUrl('&tipus=', self.tipus)
         
-    def getUrlBase(self):
+    def getUrl(self):
         "Retorna l'url de la petició"
         if self.op == None:
             raise OperacioNoEspecificada("Error en especificar l'operació: és un paràmetre obligatori!")
         # cridem a la funció superior per obtenir l'url + bàsic
-        self.url = super(PobBase, self).getUrlBase()
+        self.url = super(PobBase,self).getUrl()
         if self.op == 'cerca':
-            self.__getUrlDades()
+            self.__getUrlCerca()
         if self.op == 'sug' and self.tipus:
-            self.afegeixUrl('&tipus=', self.tipus)
+            self.__getUrlSug()
         return self.url
+
+    def getData(self):
+	    '''Obté les dades -> string'''
+	    url = ''.join(self.getUrl())
+	    print ("Connexting to ..."+url)
+	    request = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+	    sol = urlopen(request)
+	    self.data = sol.read().decode('utf-8')
+	    return self.data
+	    #print (self.data)
 
 data = None
 
@@ -114,4 +140,6 @@ def debug():
     c.setOperacio('cerca')
     #.addId(buscaId('Collbató'))
     #c.addTipus('com,cat')
+
+
     

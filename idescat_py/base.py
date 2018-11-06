@@ -10,7 +10,7 @@ comentaris)
 
 from excepcions import *
 
-class Base():
+class Base(object):
     "Inicialitza les constants del programa. Pensada només per ser implementada"
     REQ = "http://api.idescat.cat/"
     PARAM_LANG = "?lang=" 
@@ -68,7 +68,7 @@ class Base():
         for i in args:  
             self.url.append(i)
     
-    def getUrlBase(self):
+    def getUrl(self):
         "Retorna una llista amb tot l'url de la petició"
         self.url = []
         self.afegeixUrl(self.REQ, self.getServei(), '/', self.versio, '/', self.getOperacio(), '.', self.format)

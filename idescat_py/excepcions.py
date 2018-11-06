@@ -8,6 +8,9 @@ class PobBaseParamQNoPermes(Exception):
 class PobBaseParamTipusNoPermes(Exception):
     pass
 
+class PobBaseParamSimNoPermeses(Exception):
+    pass
+
 #     
 class OperacioNoPermesa(Exception):
     pass
