@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 # defineix les execepcions del mòdul
 
+# Pob Exceptions
+class PobBaseParamQNoPermes(Exception):
+    pass
+
+class PobBaseParamTipusNoPermes(Exception):
+    pass
+
+#     
 class OperacioNoPermesa(Exception):
     pass
 
