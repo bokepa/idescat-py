@@ -1,0 +1,42 @@
+01;Alt Camp;43995
+02;Alt Empordà;139705
+03;Alt Penedès;106930
+04;Alt Urgell;20296
+05;Alta Ribagorça;3827
+06;Anoia;118277
+07;Bages;175095
+08;Baix Camp;187471
+09;Baix Ebre;78180
+10;Baix Empordà;132906
+11;Baix Llobregat;813996
+12;Baix Penedès;100850
+13;Barcelonès;2248227
+14;Berguedà;39013
+15;Cerdanya;17623
+16;Conca de Barberà;20036
+17;Garraf;147504
+18;Garrigues;18975
+19;Garrotxa;56184
+20;Gironès;188083
+21;Maresme;444046
+22;Montsià;67491
+23;Noguera;38726
+24;Osona;156572
+25;Pallars Jussà;13280
+26;Pallars Sobirà;6947
+27;Pla d'Urgell;36614
+28;Pla de l'Estany;31738
+29;Priorat;9345
+30;Ribera d'Ebre;22203
+31;Ripollès;24999
+32;Segarra;22736
+33;Segrià;208059
+34;Selva;167837
+35;Solsonès;13360
+36;Tarragonès;250488
+37;Terra Alta;11634
+38;Urgell;36028
+39;Aran;9985
+40;Vallès Occidental;910031
+41;Vallès Oriental;403259
+42;Moianès;13279
