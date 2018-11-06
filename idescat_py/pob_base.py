@@ -11,7 +11,7 @@ class PobBase(Base):
         "Configura l'operació del servei"
         if op in ['cerca', 'sug']:
             self.op = op
-            if self.op == 'dades':
+            if self.op == 'cerca':
                 self.q = None
                 self.tipus = None
         else:
@@ -21,10 +21,10 @@ class PobBase(Base):
         "Afegeix un paràmetre 'q' a l'URL"
         #TODO control error
         q = str(q)
-        if (len(q)>1)
+        if (len(q)>1):
             self.q = q
         else:
-            raise PobBaseParamQNoPermes('La longitud ha de ser més gran de 1")
+            raise PobBaseParamQNoPermes('La longitud ha de ser més gran de 1')
             
     def addCommonParamTipus(self, tipus):
         "Afegeix un paràmetre 'tipus' a la URL"
@@ -34,55 +34,38 @@ class PobBase(Base):
         else:
             raise PobBaseParamTipusNoPermes('El filtre "tipus" només pot ser un string')
      #dhj 
-     
-	def addId(self, id):
-        "Afegeix un paràmetre 'id' a l'URL"
-        id = str(id)
-        if re.match(r'\d{2,6}$', id):
-            self.id = id
-        else:
-            raise IdNoPermes('El filtre "id" només pot ser un enter/string de 5 xifres')
-        if self.op == None:
-            raise OperacioNoEspecificada('Trieu abans una operació!')
-        elif self.op != 'dades':
-            raise IdNoPermes("Error en especificar el filtre: el filtre 'id' només és permès per a l'operació 'dades'" \
-            "(actualment teniu configurada l'operació %s)" % self.op)
-
-    def addI(self, i):
-        if type(i) is not str:
-            raise INoPermes('El filtre "i" ha de ser un string')
-        if self.op != 'dades':
-            raise IdNoPermes("Error en especificar el filtre: el filtre 'i' només és permès per a l'operació 'dades'" \
-            "(actualment teniu configurada l'operació %s)" % self.op)
-        if 'f271' in i:
-            i = i.replace('f271', 'f261')  # problema amb la superfície
-        if re.match(r'(f\d\d?\d?,? ?){1,5}$', i):
-            self.i = i
-        else:
-            raise INoPermes('El filtre "i" ha de ser de la forma "f\d\d?\d?"')
-
-    def addTipus(self, tipus):
-        if re.match('(com,?|cat,?|mun,?){1,3}', tipus):
-            self.tipus = tipus
-        else:
-            raise TipusNoPermes("El filtre 'tipus' només admet 'com', 'cat', o 'mun'")
     
+	def addCercaParamSim(self, sim):
+		sim = str(sim)
+		
+	def addCercaParamSelect(self, selec):
+		selec = str(selec)
+		
+	
+	def addCercaParamOrderby(self, order):
+		order = str(order)
+		
+	def addCercaParamPosicio(self, posicio):
+		posicio = str(posicio)
+		
+	# Common getters
+	
     def getOperacio(self):
         "Retorna l'operació especificada a setOperacio()"
         # sobreescrivint Base.getOperacio()
         return self.op
     
     def getServei(self):
-        "Retorna el servei que és sempre 'onomastica'"
+        "Retorna el servei que és sempre 'pob'"
         # sobreescrivint Base.getServei()
-        return 'emex'
+        return 'pob'
 
-    def __getUrlDades(self):
+    def __getUrlCerca(self):
         "Construcció específica de l'URL per l'operació dades"
-        if not (self.id or self.i):
+        if not (self.q or self.tipus):
             raise FiltreObligatori("Dins l'operació 'dades' és obligatori especificar el paràmetre 'id' o el 'i'")
         if self.id:
-            self.afegeixUrl('&id=', self.id)
+            self.afegeixUrl('&p=', self.id)
         if self.i:
             self.afegeixUrl('&i=', self.i)
         if self.tipus:
@@ -93,10 +76,10 @@ class PobBase(Base):
         if self.op == None:
             raise OperacioNoEspecificada("Error en especificar l'operació: és un paràmetre obligatori!")
         # cridem a la funció superior per obtenir l'url + bàsic
-        self.url = super(MunicipiBase, self).getUrlBase()
-        if self.op == 'dades':
+        self.url = super(PobBase, self).getUrlBase()
+        if self.op == 'cerca':
             self.__getUrlDades()
-        if self.op == 'nodes' and self.tipus:
+        if self.op == 'sug' and self.tipus:
             self.afegeixUrl('&tipus=', self.tipus)
         return self.url
 
@@ -108,7 +91,7 @@ def buscaId(s):
     else:
         import urllib.request as req # ho importem dins la funció
         from io import StringIO # i només per primera vegada
-        url = 'http://api.idescat.cat/emex/v1/nodes.json'
+        url = 'http://api.idescat.cat/pob/v1/nodes.json'
         sol = req.urlopen(url)
         globals()['data'] = sol.read().decode('utf-8')
         return __parse(s, data)
@@ -127,8 +110,8 @@ def __parse(value, obj):
 def debug():
     "Per facilitar la feina de depuració"
     global c
-    c = MunicipiBase()
-    c.setOperacio('dades')
-    c.addId(buscaId('Collbató'))
-    c.addTipus('com,cat')
+    c = PobBase()
+    c.setOperacio('cerca')
+    #.addId(buscaId('Collbató'))
+    #c.addTipus('com,cat')
     
