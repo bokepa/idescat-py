@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed 
+			xmlns="http://www.w3.org/2005/Atom" 
+			xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+			xmlns:cross="http://www.idescat.cat/-/cross/1.0/"
+>
+	<id>tag:idescat.cat,2010:poblacio/s/ab/mun</id>
+	<title xml:lang="en">Population search: ab</title>
+	
+	<updated>2018-01-29T11:00:00+00:00</updated>
+	<author>
+		<name>Idescat</name>
+		<uri>https://www.idescat.cat/poblacio/?lang=en</uri>
+	</author>
+
+	<opensearch:totalResults>22</opensearch:totalResults>
+	<opensearch:startIndex>1</opensearch:startIndex>
+	<opensearch:itemsPerPage>22</opensearch:itemsPerPage>
+
+	<opensearch:Query role="request" searchTerms="ab" startPage="1" />
+	<link rel="search" href="https://www.idescat.cat/xml/poblacio-en.xml" type="application/opensearchdescription+xml"/>
+	<link rel="self" href="https://api.idescat.cat/pob/v1/cerca.xml?q=ab&amp;tipus=mun&amp;lang=en" type="application/atom+xml"/>
+	<link rel="alternate" href="https://www.idescat.cat/poblacio/?q=ab&amp;lang=en" type="text/html"/>
+
+   <link rel="first" href="https://api.idescat.cat/pob/v1/cerca.xml?q=ab&amp;tipus=mun&amp;lang=en" type="application/atom+xml"/>
+   <link rel="last" href="https://api.idescat.cat/pob/v1/cerca.xml?q=ab&amp;tipus=mun&amp;lang=en" type="application/atom+xml"/>
+
+	
+	
+
+		<entry>
+		<id>tag:idescat.cat,2010:poblacio/080018</id>
+		<title>Abrera</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=080018&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="080018" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="6283" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="6080" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="12363" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 12,363 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/080272</id>
+		<title>Cabanyes, les</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=080272&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="080272" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="484" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="463" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="947" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 947 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/080288</id>
+		<title>Cabrera d'Anoia</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=080288&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="080288" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="724" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="640" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="1364" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 1,364 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/080291</id>
+		<title>Cabrera de Mar</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=080291&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="080291" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="2325" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="2269" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="4594" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 4,594 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/080305</id>
+		<title>Cabrils</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=080305&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="080305" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="3602" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="3694" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="7296" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 7,296 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/081878</id>
+		<title>Sabadell</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=081878&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="081878" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="102153" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="107778" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="209931" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 209,931 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/170307</id>
+		<title>Cabanes</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=170307&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="170307" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="490" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="413" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="903" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 903 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/170314</id>
+		<title>Cabanelles</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=170314&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="170314" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="150" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="115" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="265" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 265 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/171024</id>
+		<title>Maçanet de Cabrenys</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=171024&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="171024" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="345" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="361" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="706" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 706 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/171432</id>
+		<title>Rabós</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=171432&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="171432" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="86" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="89" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="175" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 175 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/171463</id>
+		<title>Riells i Viabrea</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=171463&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="171463" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="2026" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="1896" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="3922" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 3,922 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/171674</id>
+		<title>Sant Joan de les Abadesses</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=171674&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="171674" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="1631" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="1639" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="3270" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 3,270 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/172142</id>
+		<title>Vilabertran</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=172142&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="172142" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="468" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="451" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="919" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 919 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/172155</id>
+		<title>Vilablareix</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=172155&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="172155" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="1328" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="1363" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="2691" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 2,691 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/250019</id>
+		<title>Abella de la Conca</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=250019&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="250019" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="102" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="82" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="184" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 184 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/250609</id>
+		<title>Cabanabona</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=250609&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="250609" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="35" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="46" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="81" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 81 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/250616</id>
+		<title>Cabó</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=250616&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="250616" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="51" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="42" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="93" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 93 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/252252</id>
+		<title>Tornabous</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=252252&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="252252" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="465" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="393" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="858" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 858 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/252271</id>
+		<title>Torre de Cabdella, la</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=252271&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="252271" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="386" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="368" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="754" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 754 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/430350</id>
+		<title>Cabacés</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=430350&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="430350" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="159" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="150" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="309" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 309 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/430363</id>
+		<title>Cabra del Camp</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=430363&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="430363" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="592" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="539" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="1131" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 1,131 inhab.</content>
+	</entry>
+	<entry>
+		<id>tag:idescat.cat,2010:poblacio/431652</id>
+		<title>Vilabella</title>
+		<updated>2017-12-29T11:00:00+00:00</updated>
+		
+		<category term="sim2"/>
+		<category term="MUN"/>
+		<link type="text/html" href="https://www.idescat.cat/emex/?id=431652&amp;lang=en"/>
+
+		<cross:DataSet>
+			<cross:Section AREA="431652" TIME_PERIOD="2017-01-01" FREQ="A" UNIT_MULT="0" DECIMALS="0">
+				<cross:Obs SEX="M" OBS_VALUE="388" OBS_STATUS="A"/>
+				<cross:Obs SEX="F" OBS_VALUE="361" OBS_STATUS="A"/>
+				<cross:Obs SEX="T" OBS_VALUE="749" OBS_STATUS="A"/>
+			</cross:Section>
+		</cross:DataSet>
+
+		<content xml:lang="en">Municipality: 749 inhab.</content>
+	</entry>
+
+</feed>
